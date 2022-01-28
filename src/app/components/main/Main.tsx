@@ -1,12 +1,18 @@
 import React from 'react';
 
 import crowdImage from '../../../assets/images/crowd.jpg';
+import { SearchForEventsContainer } from './SearchForEventsContainer';
+import { UpcomingEventsContainer } from './UpcomingEventsContainer';
 
 export const Main: React.FC = () => {
   return (
     <main>
-      <div>div with map and inputs</div>
-      <div>div with upcoming events</div>
+      <SearchForEventsContainer>
+        div with map and inputs
+      </SearchForEventsContainer>
+      <UpcomingEventsContainer>
+        div with upcoming events
+      </UpcomingEventsContainer>
       <div>
         <img
           src={crowdImage}
