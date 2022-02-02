@@ -1,25 +1,28 @@
 import React from 'react';
-
+import styled from 'styled-components';
+import { SearchForEvents } from './SearchForEvents';
+import { UpcomingEvents } from './UpcomingEvents';
 import crowdImage from '../../../assets/images/crowd.jpg';
-import { SearchForEventsContainer } from './SearchForEventsContainer';
-import { UpcomingEventsContainer } from './UpcomingEventsContainer';
+
+const MainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+
+  & img {
+    height: 300px;
+    border: 1px solid black;
+  }
+`;
 
 export const Main: React.FC = () => {
   return (
-    <main>
-      <SearchForEventsContainer>
-        div with map and inputs
-      </SearchForEventsContainer>
-      <UpcomingEventsContainer>
-        div with upcoming events
-      </UpcomingEventsContainer>
-      <div>
-        <img
-          src={crowdImage}
-          alt="Crowd and lights at the concert"
-          width="800px"
-        />
-      </div>
-    </main>
+    <MainContainer>
+      <SearchForEvents>Search</SearchForEvents>
+      <UpcomingEvents>Comingup</UpcomingEvents>
+      <img src={crowdImage} alt="Crowd at the concert" />
+    </MainContainer>
   );
 };
