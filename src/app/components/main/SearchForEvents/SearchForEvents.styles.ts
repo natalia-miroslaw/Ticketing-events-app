@@ -7,13 +7,4 @@ export const SearchContainer = styled.div`
   gap: 0.5rem;
   width: 100%;
   border: 1px solid black;
-
-  & .search-inputs,
-  & .search-map {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-  }
 `;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SearchForEvents } from './SearchForEvents';
-import { UpcomingEvents } from './UpcomingEvents';
+import { SearchForEvents } from './SearchForEvents/SearchForEvents';
+import { UpcomingEvents } from './UpcomingEvents/UpcomingEvents';
 import crowdImage from '../../../assets/images/crowd.jpg';
 
 const MainContainer = styled.div`

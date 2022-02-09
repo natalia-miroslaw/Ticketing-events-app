@@ -1,20 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Header } from './layout/header/Header';
-import { Main } from './components/main/Main';
+import { Router } from '../routes/Router';
+import { BrowserRouter } from 'react-router-dom';
 
 const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0.5rem;
-  border: 1px solid black;
+  width: 100%;
+  border: 1px solid red;
+  height: 100vh;
 `;
 
 export const App: React.FC = () => {
   return (
-    <AppContainer>
-      <Header />
-      <Main />
-    </AppContainer>
+    <BrowserRouter>
+      <AppContainer>
+        <Router />
+      </AppContainer>
+    </BrowserRouter>
   );
 };

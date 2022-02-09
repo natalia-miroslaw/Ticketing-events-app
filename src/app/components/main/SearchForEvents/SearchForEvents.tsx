@@ -1,11 +1,13 @@
 import React from 'react';
 import { SearchContainer } from './SearchForEvents.styles';
+import { Inputs } from './Inputs/Inputs';
+import { MyMap } from './Map/Map';
 
 export const SearchForEvents: React.FC = () => {
   return (
     <SearchContainer>
-      <div className="search-inputs">Inputs</div>
-      <div className="search-map">Map</div>
+      <Inputs>Inputs</Inputs>
+      <MyMap>Map</MyMap>
     </SearchContainer>
   );
 };

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { UpcomingEventsContainer } from './UpcomingEvents.styles';
 
 export const UpcomingEvents: React.FC = () => {

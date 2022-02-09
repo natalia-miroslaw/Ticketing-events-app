@@ -7,6 +7,7 @@ const HeaderContainer = styled.header`
   justify-content: center;
   align-items: center;
   height: 100px;
+  width: 100%;
   border: 1px solid black;
 `;
 
