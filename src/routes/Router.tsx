@@ -7,17 +7,19 @@ import { MainLayout } from '../app/layout/Main/MainLayout';
 import { LogSignLayout } from '../app/layout/LogSign';
 import { Page404 } from '../app/pages/Page404';
 
-const LoadingPage = (Component: React.ElementType) => (props: unknown) =>
-  (
-    <Suspense
-      fallback={
-        <div style={{ position: 'fixed', top: '50%', left: '50%' }}>
-          <p>Loading...</p>
-        </div>
-      }>
-      <Component {...props} />
-    </Suspense>
-  );
+const LoadingPage =
+  (Component: React.ElementType) =>
+  (props: unknown): JSX.Element =>
+    (
+      <Suspense
+        fallback={
+          <div style={{ position: 'fixed', top: '50%', left: '50%' }}>
+            <p>Loading...</p>
+          </div>
+        }>
+        <Component {...props} />
+      </Suspense>
+    );
 
 const HomePage = LoadingPage(lazy(() => import('../app/pages/HomePage')));
 const CategoryPage = LoadingPage(

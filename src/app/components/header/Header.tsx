@@ -1,10 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Navigation } from './navigation/Navigation';
+import { SubmitButtons } from './SubmitButtons/SubmitButtons';
+import { Logo } from './logo/Logo';
 
 const HeaderContainer = styled.header`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   height: 100px;
   width: 100%;
@@ -12,5 +15,11 @@ const HeaderContainer = styled.header`
 `;
 
 export const Header: React.FC = () => {
-  return <HeaderContainer>Header</HeaderContainer>;
+  return (
+    <HeaderContainer>
+      <Logo />
+      <Navigation />
+      <SubmitButtons />
+    </HeaderContainer>
+  );
 };
