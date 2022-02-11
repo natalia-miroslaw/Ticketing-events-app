@@ -8,7 +8,6 @@ const AppContainer = styled.div`
   flex-direction: column;
   width: 100%;
   border: 1px solid red;
-  height: 100vh;
 `;
 
 export const App: React.FC = () => {
