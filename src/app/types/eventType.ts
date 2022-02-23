@@ -6,6 +6,7 @@ export interface EventType {
   description: string;
   price: number;
   category: string;
+  tags: string[];
   localization: {
     place: string | 'online';
     address?: string;

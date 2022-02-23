@@ -31,6 +31,12 @@ const OrganizerInfoPage = LoadingPage(
 const EventPage = LoadingPage(lazy(() => import('../app/pages/EventPage')));
 const LogInPage = LoadingPage(lazy(() => import('../app/pages/LogInPage')));
 const SignUpPage = LoadingPage(lazy(() => import('../app/pages/SignUpPage')));
+const LoggedInUserPage = LoadingPage(
+  lazy(() => import('../app/pages/LoggedInUserPage'))
+);
+const LoggedInOrganizerPage = LoadingPage(
+  lazy(() => import('../app/pages/LoggedInOrganizerPage'))
+);
 
 export const Router: React.FC = () => {
   return useRoutes([
@@ -47,7 +53,12 @@ export const Router: React.FC = () => {
         { path: Paths.root, element: <HomePage /> },
         { path: Paths.organizerInfo, element: <OrganizerInfoPage /> },
         { path: Paths.category, element: <CategoryPage /> },
-        { path: Paths.eventPage, element: <EventPage /> }
+        { path: Paths.eventPage, element: <EventPage /> },
+        { path: Paths.loggedInUserPage, element: <LoggedInUserPage /> },
+        {
+          path: Paths.loggedInOrganizerPage,
+          element: <LoggedInOrganizerPage />
+        }
       ]
     },
     {

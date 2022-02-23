@@ -6,8 +6,8 @@ import { MyMap } from './Map/Map';
 export const SearchForEvents: React.FC = () => {
   return (
     <SearchContainer>
-      <Inputs>Inputs</Inputs>
-      <MyMap>Map</MyMap>
+      <Inputs />
+      <MyMap />
     </SearchContainer>
   );
 };

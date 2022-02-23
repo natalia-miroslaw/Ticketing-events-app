@@ -6,6 +6,7 @@ const MapContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 5px;
   border: 1px solid black;
 `;
 

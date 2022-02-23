@@ -5,5 +5,7 @@ export const Paths = {
   eventPage: '/:eventId',
   signUpPage: '/sign-up',
   logInPage: '/log-in',
-  organizerInfo: '/organizer'
+  organizerInfo: '/organizer',
+  loggedInUserPage: '/user-account',
+  loggedInOrganizerPage: '/organizer-account'
 };
