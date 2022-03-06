@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Navigation } from './navigation/Navigation';
+import { NavByCategory } from './navigation/Navigation';
 import { SubmitButtons } from './SubmitButtons/SubmitButtons';
 import { Logo } from './logo/Logo';
 
@@ -18,7 +18,7 @@ export const Header: React.FC = () => {
   return (
     <HeaderContainer>
       <Logo />
-      <Navigation />
+      <NavByCategory />
       <SubmitButtons />
     </HeaderContainer>
   );

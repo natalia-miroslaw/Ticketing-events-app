@@ -1,21 +1,41 @@
+import React, { useCallback } from 'react';
 import { NavContainer } from './Navigation.styles';
 import { Link } from 'react-router-dom';
 import { Paths } from '../../../../routes/paths';
-import React from 'react';
+import { useDispatch } from 'react-redux';
+import { filterEventsAction } from '../../../../store/async-actions/filter-events.action';
+import { AppThunkDispatch } from '../../../../store/reducers/rootReducer';
 
-export const Navigation: React.FC = () => {
+const categories = [
+  { name: 'Concerts', status: false },
+  { name: 'Online Events', status: false },
+  { name: 'Dancing Workshops', status: false }
+];
+
+export const NavByCategory: React.FC = () => {
+  const dispatch = useDispatch<AppThunkDispatch>();
+
+  const onClick = useCallback(
+    (category: string): Promise<void> => {
+      return dispatch(filterEventsAction(category));
+    },
+    [dispatch]
+  );
+
   return (
     <NavContainer>
       <ul>
-        <li>
-          <Link to={Paths.category}>Concerts</Link>
-        </li>
-        <li>
-          <Link to={Paths.category}>Dancing Events</Link>
-        </li>
-        <li>
-          <Link to={Paths.category}>Online Events</Link>
-        </li>
+        {categories.map((category) => {
+          return (
+            <li>
+              <Link
+                onClick={() => onClick(category.name)}
+                to={`/${category.name}`}>
+                {category.name}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </NavContainer>
   );
