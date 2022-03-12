@@ -141,3 +141,24 @@ export const DUMMY_DATA: EventType[] = [
       'https://i1.wp.com/www.worldareggae.com/wp-content/uploads/2019/06/Damian-Marley-Woodstock-2019-3228-2.jpg?fit=1080%2C720&ssl=1'
   }
 ];
+
+// export const categories = [
+//   {
+//     name: 'Concerts',
+//     subcategories: [
+//       'Rock',
+//       'Reggae',
+//       'Pop',
+//       'Electronic',
+//       'Dancehall',
+//       'Hip-hop',
+//       'Folk',
+//       'Latin'
+//     ]
+//   },
+//   {
+//     name: 'Dancing Workshops',
+//     subcategories: ['Dancehall', 'Hip-hop', 'Afro', 'Salsa', 'Twerk']
+//   },
+//   { name: 'Online Events' }
+// ];

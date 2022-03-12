@@ -1,7 +1,7 @@
 export const Paths = {
   root: '/',
   page404: '/404',
-  category: '/category',
+  category: '/:categoryId',
   eventPage: '/:eventId',
   signUpPage: '/sign-up',
   logInPage: '/log-in',
