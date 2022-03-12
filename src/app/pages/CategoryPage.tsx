@@ -1,8 +1,10 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { EventsList } from '../components/shared/EventsList/EventsList';
-import { getEvents } from '../../store/selectors';
+import { getEventsSelector } from '../../store/selectors';
 
 const CategoryPage: React.FC = () => {
+  const getEvents = useSelector(getEventsSelector);
   return (
     <div>
       <h2>Concerts / Dancing Events / Online Events Page</h2>

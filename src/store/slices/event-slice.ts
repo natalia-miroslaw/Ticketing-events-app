@@ -4,11 +4,13 @@ import { EventType } from '../../app/types/eventType';
 
 export interface EventStateInterface {
   event: EventType[];
+  tags: string[];
   showEvent: boolean;
 }
 
 const initialEventState: EventStateInterface = {
   event: DUMMY_DATA,
+  tags: [],
   showEvent: true
 };
 
@@ -23,6 +25,9 @@ const eventSlice = createSlice({
       if (action.payload) {
         state.event = action.payload;
       }
+    },
+    setEventsTags(state: EventStateInterface, action: PayloadAction<string[]>) {
+      state.tags = action.payload;
     }
     // dateFilter() {}
   }
@@ -30,5 +35,5 @@ const eventSlice = createSlice({
 
 const { actions, reducer: eventReducer } = eventSlice;
 
-export const { setFilteredEvents } = actions;
+export const { setFilteredEvents, setEventsTags } = actions;
 export default eventReducer;
