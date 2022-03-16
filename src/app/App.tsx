@@ -16,7 +16,7 @@ export const App: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(filterEventsAction(''));
+    dispatch(filterEventsAction({ category: '', tag: '' }));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

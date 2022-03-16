@@ -8,15 +8,15 @@ export const Logo: React.FC = () => {
   const dispatch = useDispatch();
 
   const onClick = useCallback(
-    (category: string) => {
-      return dispatch(filterEventsAction(category));
+    ({ category, tag }) => {
+      return dispatch(filterEventsAction({ category, tag }));
     },
     [dispatch]
   );
 
   return (
     <div>
-      <Link to={Paths.root} onClick={() => onClick('')}>
+      <Link to={Paths.root} onClick={() => onClick({ category: '', tag: '' })}>
         logo
       </Link>
     </div>

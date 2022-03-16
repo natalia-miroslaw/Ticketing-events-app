@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -10,9 +10,11 @@ import { getEventsTagsSelector } from '../../../../../store/selectors';
 export const Inputs: React.FC = () => {
   const [tags, setTags] = React.useState('');
   const eventsTags = useSelector(getEventsTagsSelector);
+  const dispatch = useDispatch();
 
   const handleChange = (event: SelectChangeEvent) => {
     setTags(event.target.value as string);
+    filterEventsAction('');
   };
 
   return (

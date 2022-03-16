@@ -15,8 +15,8 @@ export const NavByCategory: React.FC = () => {
   const dispatch = useDispatch<AppThunkDispatch>();
 
   const onClick = useCallback(
-    (category: string): Promise<void> => {
-      return dispatch(filterEventsAction(category));
+    ({ category, tag }): Promise<void> => {
+      return dispatch(filterEventsAction({ category: '', tag: '' }));
     },
     [dispatch]
   );
@@ -28,7 +28,7 @@ export const NavByCategory: React.FC = () => {
           return (
             <li>
               <Link
-                onClick={() => onClick(category.name)}
+                onClick={() => onClick({ category: category.name, tag: '' })}
                 to={`/${category.name}`}>
                 {category.name}
               </Link>

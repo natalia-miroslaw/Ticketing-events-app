@@ -4,7 +4,7 @@ export const DUMMY_DATA: EventType[] = [
   {
     id: 1,
     title: 'Sean Paul live Concert',
-    date: 1654779628,
+    date: new Date(2022, 10, 23),
     organizer: 'Natalia Mirosław',
     description: 'Come see the Sean Paul concert!',
     price: 50.0,
@@ -28,7 +28,7 @@ export const DUMMY_DATA: EventType[] = [
   {
     id: 2,
     title: 'Dancehall with Jasmin Halper',
-    date: 1653224428,
+    date: new Date(2022, 10, 24),
     organizer: 'Natalia Mirosław',
     description:
       'Dancehall workshops with Jasmin from Xclusiv Dancers in Gdańsk!',
@@ -53,7 +53,7 @@ export const DUMMY_DATA: EventType[] = [
   {
     id: 3,
     title: 'Sunrise Festival 2022',
-    date: 1657458028,
+    date: new Date(2022, 10, 10),
     organizer: 'Natalia Mirosław',
     description: 'Check out the artists performing at the festival!',
     price: 350.0,
@@ -79,7 +79,7 @@ export const DUMMY_DATA: EventType[] = [
   {
     id: 4,
     title: 'Stretching Online',
-    date: 1655298028,
+    date: new Date(2022, 10, 13),
     organizer: 'Natalia Mirosław',
     description: '1.5h stretching class online for beginners',
     price: 20.0,
@@ -93,7 +93,7 @@ export const DUMMY_DATA: EventType[] = [
   {
     id: 5,
     title: 'Hip-Hop Workshops in Vienna',
-    date: 1650884428,
+    date: new Date(2022, 10, 12),
     organizer: 'Natalia Mirosław',
     description: 'Buy ticket for Hip-Hop workshops with Mario & Luigi',
     price: 140.0,
@@ -118,7 +118,7 @@ export const DUMMY_DATA: EventType[] = [
   {
     id: 6,
     title: 'Damian Marley Concert',
-    date: 1659466828,
+    date: new Date(2022, 10, 16),
     organizer: 'Natalia Mirosław',
     description: 'Damian Marley live concert in Wrocław!',
     price: 100.0,
