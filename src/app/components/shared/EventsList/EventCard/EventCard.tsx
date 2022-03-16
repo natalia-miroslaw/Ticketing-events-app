@@ -4,7 +4,7 @@ import { EventCardContainer } from './EventCard.styles';
 
 interface EventCardProps {
   eventTitle: string;
-  eventDate: number;
+  eventDate: Date;
   eventPlace: string;
   eventPhoto: string | undefined;
   eventID: number;
@@ -23,7 +23,7 @@ export const EventCard: React.FC<EventCardProps> = ({
         <img src={eventPhoto} alt="img" width="100px" />
         <div>
           <p>
-            {eventDate}, {eventPlace}
+            {eventDate.toString()}, {eventPlace}
           </p>
         </div>
         <div>

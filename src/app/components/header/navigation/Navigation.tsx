@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react';
 import { NavContainer } from './Navigation.styles';
 import { Link } from 'react-router-dom';
-import { Paths } from '../../../../routes/paths';
 import { useDispatch } from 'react-redux';
 import { filterEventsAction } from '../../../../store/async-actions/filter-events.action';
 import { AppThunkDispatch } from '../../../../store/reducers/rootReducer';
