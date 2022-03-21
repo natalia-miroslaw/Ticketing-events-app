@@ -4,36 +4,44 @@ import { setFilteredEvents, setEventsTags } from '../slices/event-slice';
 import { EventType } from '../../app/types/eventType';
 import uniq from 'lodash/uniq';
 
-// back-end simulation:
 interface getFilteredDataProps {
   category: string;
   tag: string;
+  date?: Date;
 }
 
+const dummyData = [...DUMMY_DATA];
+
+// back-end simulation:
 const getFilteredData = ({
   category = '',
-  tag = ''
+  tag = '',
+  date = new Date()
 }: getFilteredDataProps): Promise<EventType[]> => {
   return new Promise((resolve) => {
-    let data: EventType[];
+    let data: EventType[] = dummyData;
 
-    // 'ASDDDDDDD'
+    // filtrowanie po category
     if (category) {
       data = DUMMY_DATA.filter((event) => {
         return event.category === category;
       });
     }
 
+    // filtrowanie po tagach
     if (tag) {
       data = DUMMY_DATA.filter((event) => {
         return event.tags.some((eventTag) => eventTag === tag);
       });
-      // filtrowanie po tagach
     }
 
-    // if (date) {
-    //   // filtrowanie po dacie
-    // }
+    // filtrowanie po dacie
+    if (date) {
+      data = DUMMY_DATA.filter((event) => {
+        return event.date === date;
+      });
+    }
+
     // '' <- PUSTY STRING
     else {
       data = DUMMY_DATA;
@@ -53,16 +61,16 @@ export const filterEventsAction = (
   return async function thunk(dispatch): Promise<void> {
     try {
       const filteredData = await getFilteredData(props);
-      // filteredData.map((item) => console.log(item.date.getMilliseconds()));
-      // filteredData.sort(
-      //   (a, b) => a.date.getMilliseconds() - b.date.getMilliseconds()
-      // );
+      const sortedData = filteredData.sort(
+        (a, b) => a.date.getTime() - b.date.getTime()
+      );
+
       const tagsList = uniq(
-        filteredData.map((item: EventType) => item?.tags).flat()
+        dummyData.map((item: EventType) => item?.tags).flat()
       );
       dispatch(setEventsTags(tagsList));
       console.log('tagsList', tagsList);
-      dispatch(setFilteredEvents(filteredData));
+      dispatch(setFilteredEvents(sortedData));
     } catch (err) {
       console.log(err);
     }

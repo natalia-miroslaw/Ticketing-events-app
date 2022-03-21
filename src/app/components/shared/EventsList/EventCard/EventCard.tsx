@@ -23,7 +23,7 @@ export const EventCard: React.FC<EventCardProps> = ({
         <img src={eventPhoto} alt="img" width="100px" />
         <div>
           <p>
-            {eventDate.toString()}, {eventPlace}
+            {eventDate.toLocaleDateString('en-GB')}, {eventPlace}
           </p>
         </div>
         <div>

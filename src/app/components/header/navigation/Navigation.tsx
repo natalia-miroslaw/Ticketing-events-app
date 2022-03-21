@@ -16,7 +16,7 @@ export const NavByCategory: React.FC = () => {
 
   const onClick = useCallback(
     ({ category, tag }): Promise<void> => {
-      return dispatch(filterEventsAction({ category: '', tag: '' }));
+      return dispatch(filterEventsAction({ category: category, tag: '' }));
     },
     [dispatch]
   );
@@ -24,9 +24,9 @@ export const NavByCategory: React.FC = () => {
   return (
     <NavContainer>
       <ul>
-        {categories.map((category) => {
+        {categories.map((category, index) => {
           return (
-            <li>
+            <li key={index}>
               <Link
                 onClick={() => onClick({ category: category.name, tag: '' })}
                 to={`/${category.name}`}>

@@ -6,15 +6,16 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { getEventsTagsSelector } from '../../../../../store/selectors';
+import { filterEventsAction } from '../../../../../store/async-actions/filter-events.action';
 
-export const Inputs: React.FC = () => {
+export const SearchByTagsInput: React.FC = () => {
   const [tags, setTags] = React.useState('');
   const eventsTags = useSelector(getEventsTagsSelector);
   const dispatch = useDispatch();
 
-  const handleChange = (event: SelectChangeEvent) => {
+  const handleChange = (event: SelectChangeEvent): void => {
     setTags(event.target.value as string);
-    filterEventsAction('');
+    dispatch(filterEventsAction({ category: '', tag: event.target.value }));
   };
 
   return (
@@ -28,7 +29,9 @@ export const Inputs: React.FC = () => {
           label="Tags"
           onChange={handleChange}>
           {eventsTags.map((eventTag, index) => (
-            <MenuItem value={index}>{eventTag}</MenuItem>
+            <MenuItem key={index} value={eventTag}>
+              {eventTag}
+            </MenuItem>
           ))}
         </Select>
       </FormControl>

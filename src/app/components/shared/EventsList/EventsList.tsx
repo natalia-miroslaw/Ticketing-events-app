@@ -18,8 +18,9 @@ export const EventsList: React.FC<EventsListProps> = ({ events }) => {
 
   return (
     <EventsListContainer>
-      {events.map((event) => (
+      {events.slice(0, 3).map((event, index) => (
         <EventCard
+          key={index}
           eventTitle={event.title}
           eventDate={event.date}
           eventPlace={event.localization.place}

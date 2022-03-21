@@ -6,12 +6,14 @@ export interface EventStateInterface {
   event: EventType[];
   tags: string[];
   showEvent: boolean;
+  date: Date;
 }
 
 const initialEventState: EventStateInterface = {
-  event: DUMMY_DATA,
+  event: [],
   tags: [],
-  showEvent: true
+  showEvent: true,
+  date: new Date()
 };
 
 const eventSlice = createSlice({
