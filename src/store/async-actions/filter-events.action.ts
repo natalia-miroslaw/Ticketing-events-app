@@ -16,7 +16,7 @@ const dummyData = [...DUMMY_DATA];
 const getFilteredData = ({
   category = '',
   tag = '',
-  date = new Date()
+  date
 }: getFilteredDataProps): Promise<EventType[]> => {
   return new Promise((resolve) => {
     let data: EventType[] = dummyData;
@@ -53,6 +53,7 @@ const getFilteredData = ({
 interface filterEventsActionProps {
   category: string;
   tag: string;
+  date?: Date | null;
 }
 
 export const filterEventsAction = (
