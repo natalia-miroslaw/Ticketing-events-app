@@ -50,14 +50,8 @@ const getFilteredData = ({
   });
 };
 
-interface filterEventsActionProps {
-  category: string;
-  tag: string;
-  date?: Date | null;
-}
-
 export const filterEventsAction = (
-  props: filterEventsActionProps
+  props: getFilteredDataProps
 ): AppThunkAction => {
   return async function thunk(dispatch): Promise<void> {
     try {

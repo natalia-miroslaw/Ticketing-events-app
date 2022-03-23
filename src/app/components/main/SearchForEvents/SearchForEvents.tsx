@@ -7,8 +7,11 @@ import { MyMap } from './Map/Map';
 export const SearchForEvents: React.FC = () => {
   return (
     <SearchContainer>
-      <SearchByTagsInput />
-      <DateInput />
+      <div>
+        <SearchByTagsInput />
+        <DateInput />
+        <button>Search</button>
+      </div>
       <MyMap />
     </SearchContainer>
   );
