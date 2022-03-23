@@ -1,8 +1,8 @@
 export const Paths = {
   root: '/',
   page404: '/404',
-  category: '/:categoryId',
-  eventPage: '/:eventId',
+  category: '/category/:categoryId',
+  eventPage: '/event/:eventId',
   signUpPage: '/sign-up',
   logInPage: '/log-in',
   organizerInfo: '/organizer',

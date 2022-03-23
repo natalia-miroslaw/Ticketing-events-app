@@ -5,17 +5,17 @@ import { EventType } from '../../app/types/eventType';
 import uniq from 'lodash/uniq';
 
 interface getFilteredDataProps {
-  category: string;
-  tag: string;
-  date?: Date;
+  category?: string;
+  tag?: string;
+  date?: number | null;
 }
 
 const dummyData = [...DUMMY_DATA];
 
 // back-end simulation:
 const getFilteredData = ({
-  category = '',
-  tag = '',
+  category,
+  tag,
   date
 }: getFilteredDataProps): Promise<EventType[]> => {
   return new Promise((resolve) => {
@@ -56,9 +56,7 @@ export const filterEventsAction = (
   return async function thunk(dispatch): Promise<void> {
     try {
       const filteredData = await getFilteredData(props);
-      const sortedData = filteredData.sort(
-        (a, b) => a.date.getTime() - b.date.getTime()
-      );
+      const sortedData = filteredData.sort((a, b) => a.date - b.date);
 
       const tagsList = uniq(
         dummyData.map((item: EventType) => item?.tags).flat()

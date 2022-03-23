@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { EventCardContainer } from './EventCard.styles';
+import { fromUnixTime, millisecondsToSeconds } from 'date-fns';
 
 interface EventCardProps {
   eventTitle: string;
-  eventDate: Date;
+  eventDate: number;
   eventPlace: string;
   eventPhoto: string | undefined;
   eventID: number;
@@ -19,11 +20,14 @@ export const EventCard: React.FC<EventCardProps> = ({
 }) => {
   return (
     <EventCardContainer>
-      <Link to={`/${eventID}`}>
+      <Link to={`/event/${eventID}`}>
         <img src={eventPhoto} alt="img" width="100px" />
         <div>
           <p>
-            {eventDate.toLocaleDateString('en-GB')}, {eventPlace}
+            {fromUnixTime(millisecondsToSeconds(eventDate)).toLocaleDateString(
+              'gb-GB'
+            )}
+            , {eventPlace}
           </p>
         </div>
         <div>

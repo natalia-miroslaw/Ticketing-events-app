@@ -4,7 +4,7 @@ export const DUMMY_DATA: EventType[] = [
   {
     id: 1,
     title: 'Sean Paul live Concert',
-    date: new Date(2022, 10, 23),
+    date: 1666555200000, //23-10-2022 20:00
     organizer: 'Natalia Mirosław',
     description: 'Come see the Sean Paul concert!',
     price: 50.0,
@@ -19,7 +19,7 @@ export const DUMMY_DATA: EventType[] = [
   {
     id: 2,
     title: 'Dancehall with Jasmin Halper',
-    date: new Date(2022, 10, 24),
+    date: 1666620000000, //24-10-2022 14:00
     organizer: 'Natalia Mirosław',
     description:
       'Dancehall workshops with Jasmin from Xclusiv Dancers in Gdańsk!',
@@ -44,7 +44,7 @@ export const DUMMY_DATA: EventType[] = [
   {
     id: 3,
     title: 'Sunrise Festival 2022',
-    date: new Date(2022, 8, 10),
+    date: 1660143600000, //24-08-2022 15:00
     organizer: 'Natalia Mirosław',
     description: 'Check out the artists performing at the festival!',
     price: 350.0,
@@ -67,7 +67,7 @@ export const DUMMY_DATA: EventType[] = [
   {
     id: 4,
     title: 'Stretching Online',
-    date: new Date(2022, 10, 13),
+    date: 1665680400000, //13-10-2022 17:00
     organizer: 'Natalia Mirosław',
     description: '1.5h stretching class online for beginners',
     price: 20.0,
@@ -81,7 +81,7 @@ export const DUMMY_DATA: EventType[] = [
   {
     id: 5,
     title: 'Hip-Hop Workshops in Vienna',
-    date: new Date(2022, 10, 12),
+    date: 1655038800000, //12-06-2022 13:00
     organizer: 'Natalia Mirosław',
     description: 'Buy ticket for Hip-Hop workshops with Mario & Luigi',
     price: 140.0,
@@ -106,7 +106,7 @@ export const DUMMY_DATA: EventType[] = [
   {
     id: 6,
     title: 'Damian Marley Concert',
-    date: new Date(2022, 6, 16),
+    date: 1657998000000, //16-07-2022 19:00
     organizer: 'Natalia Mirosław',
     description: 'Damian Marley live concert in Wrocław!',
     price: 100.0,
@@ -129,7 +129,7 @@ export const DUMMY_DATA: EventType[] = [
   {
     id: 7,
     title: 'Alicia Keys',
-    date: new Date(2022, 7, 15),
+    date: 1657918800000, //15-07-2022 21:00
     organizer: 'Natalia Mirosław',
     description: 'Alicia Keys is coming to Poland to have a concert in Cracow!',
     price: 170.0,
@@ -144,7 +144,7 @@ export const DUMMY_DATA: EventType[] = [
   {
     id: 8,
     title: 'Eagles of Death Metal: The World Tour',
-    date: new Date(2023, 5, 31),
+    date: 1685563200000, //31-05-2023 20:00
     organizer: 'Natalia Mirosław',
     description:
       'Eagles of Death Metal are extending The World Tour and are coming to Poland soon!',
@@ -166,7 +166,7 @@ export const DUMMY_DATA: EventType[] = [
   {
     id: 9,
     title: 'Ed Scheeran Europe Tour',
-    date: new Date(2022, 7, 30),
+    date: 1661889600000, //30-08-2022 20:00
     organizer: 'Natalia Mirosław',
     description: 'Ed Scheeran is coming to Europe to promote his new album!',
     price: 220.0,
@@ -181,7 +181,7 @@ export const DUMMY_DATA: EventType[] = [
   {
     id: 10,
     title: 'Lost Frequencies',
-    date: new Date(2022, 12, 2),
+    date: 1670004000000, //02-12-2022 18:00
     organizer: 'Natalia Mirosław',
     description: 'Lost Frequencies again in Warsaw!',
     price: 90.0,
@@ -203,7 +203,7 @@ export const DUMMY_DATA: EventType[] = [
   {
     id: 11,
     title: 'Salsa Workshops in Poznań',
-    date: new Date(2022, 11, 9),
+    date: 1668009600000, //09-11-2022 16:00
     organizer: 'Natalia Mirosław',
     description: 'Salsa workshops for ladies with Silvia',
     price: 40.0,
@@ -227,7 +227,7 @@ export const DUMMY_DATA: EventType[] = [
   {
     id: 12,
     title: 'High Heels Workshops',
-    date: new Date(2022, 6, 20),
+    date: 1662721200000, //09-09-2022 11:00
     organizer: 'Natalia Mirosław',
     description: 'High Heels workshops in Olsztyn, check the ',
     price: 45.0,

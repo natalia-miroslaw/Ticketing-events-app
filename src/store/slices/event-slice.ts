@@ -1,19 +1,18 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { DUMMY_DATA } from '../../app/components/mock';
 import { EventType } from '../../app/types/eventType';
 
 export interface EventStateInterface {
   event: EventType[];
   tags: string[];
   showEvent: boolean;
-  date: Date;
+  date: number;
 }
 
 const initialEventState: EventStateInterface = {
   event: [],
   tags: [],
   showEvent: true,
-  date: new Date()
+  date: new Date().getTime()
 };
 
 const eventSlice = createSlice({

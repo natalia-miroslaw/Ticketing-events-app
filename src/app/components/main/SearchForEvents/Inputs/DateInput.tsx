@@ -7,11 +7,11 @@ import { filterEventsAction } from '../../../../../store/async-actions/filter-ev
 
 export const DateInput: React.FC = () => {
   const dispatch = useDispatch();
-  const [date, setDate] = useState(null);
+  const [date, setDate] = useState<number | null>();
 
-  const handleChange = (newDate: Date | null): void => {
+  const handleChange = (newDate: number | null): void => {
     setDate(newDate);
-    dispatch(filterEventsAction({ category: '', tag: '', date: newDate }));
+    dispatch(filterEventsAction({ date: newDate }));
   };
 
   return (

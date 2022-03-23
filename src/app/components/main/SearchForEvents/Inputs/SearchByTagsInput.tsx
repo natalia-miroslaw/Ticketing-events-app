@@ -18,7 +18,7 @@ export const SearchByTagsInput: React.FC = () => {
 
   const handleChange = (event: SelectChangeEvent): void => {
     setTags(event.target.value as string);
-    dispatch(filterEventsAction({ category: '', tag: event.target.value }));
+    dispatch(filterEventsAction({ tag: event.target.value }));
   };
 
   return (
