@@ -8,17 +8,18 @@ import {
   Select,
   SelectChangeEvent
 } from '@mui/material';
-import { getEventsTagsSelector } from '../../../../../store/selectors';
+import { getEventsFiltersSelector, getEventsTagsSelector } from '../../../../../store/selectors';
 import { filterEventsAction } from '../../../../../store/async-actions/filter-events.action';
 
 export const SearchByTagsInput: React.FC = () => {
   const [tags, setTags] = React.useState('');
   const eventsTags = useSelector(getEventsTagsSelector);
+  const filters = useSelector(getEventsFiltersSelector);
   const dispatch = useDispatch();
 
   const handleChange = (event: SelectChangeEvent): void => {
     setTags(event.target.value as string);
-    dispatch(filterEventsAction({ tag: event.target.value }));
+    dispatch(filterEventsAction({ ...filters, tag: event.target.value }));
   };
 
   return (

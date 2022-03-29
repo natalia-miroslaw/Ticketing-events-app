@@ -1,9 +1,10 @@
 import React, { useCallback } from 'react';
 import { NavContainer } from './Navigation.styles';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { filterEventsAction } from '../../../../store/async-actions/filter-events.action';
 import { AppThunkDispatch } from '../../../../store/reducers/rootReducer';
+import { getEventsFiltersSelector } from '../../../../store/selectors';
 
 const categories = [
   { name: 'Concerts', status: false },
@@ -13,12 +14,14 @@ const categories = [
 
 export const NavByCategory: React.FC = () => {
   const dispatch = useDispatch<AppThunkDispatch>();
+  const filters = useSelector(getEventsFiltersSelector);
 
   const onClick = useCallback(
     ({ category }): Promise<void> => {
-      return dispatch(filterEventsAction({ category: category }));
+      console.log('category', category)
+      return dispatch(filterEventsAction({ ...filters, category: category, tag: '' }));
     },
-    [dispatch]
+    [dispatch, filters]
   );
 
   return (

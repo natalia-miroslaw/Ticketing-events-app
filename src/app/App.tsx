@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { Router } from '../routes/Router';
 import { BrowserRouter } from 'react-router-dom';
 import { filterEventsAction } from '../store/async-actions/filter-events.action';
+import { getEventsFiltersSelector } from '../store/selectors';
 
 const AppContainer = styled.div`
   display: flex;
@@ -14,9 +15,19 @@ const AppContainer = styled.div`
 
 export const App: React.FC = () => {
   const dispatch = useDispatch();
+  const filters = useSelector(getEventsFiltersSelector);
 
   useEffect(() => {
-    dispatch(filterEventsAction({ category: '', tag: '' }));
+    dispatch(
+      filterEventsAction({
+        ...filters,
+        category: '',
+        tag: '',
+        date: {
+          dateFrom: null,
+          dateTo: null
+      }})
+  );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

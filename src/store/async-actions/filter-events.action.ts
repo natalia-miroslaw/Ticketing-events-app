@@ -1,23 +1,22 @@
 import { AppThunkAction } from '../reducers/rootReducer';
 import { DUMMY_DATA } from '../../app/components/mock';
-import { setFilteredEvents, setEventsTags } from '../slices/event-slice';
+import {
+  setFilteredEvents,
+  setEventsTags,
+  Ifilters,
+  setFilters
+} from '../slices/event-slice';
 import { EventType } from '../../app/types/eventType';
 import uniq from 'lodash/uniq';
-
-interface getFilteredDataProps {
-  category?: string;
-  tag?: string;
-  date?: number | null;
-}
 
 const dummyData = [...DUMMY_DATA];
 
 // back-end simulation:
 const getFilteredData = ({
   category,
-  tag,
-  date
-}: getFilteredDataProps): Promise<EventType[]> => {
+  tag
+}: //date
+Ifilters): Promise<EventType[]> => {
   return new Promise((resolve) => {
     let data: EventType[] = dummyData;
 
@@ -36,11 +35,11 @@ const getFilteredData = ({
     }
 
     // filtrowanie po dacie
-    if (date) {
-      data = DUMMY_DATA.filter((event) => {
-        return event.date === date;
-      });
-    }
+    // if (date) {
+    //   data = DUMMY_DATA.filter((event) => {
+    //     return event.date === date;
+    //   });
+    // }
 
     // '' <- PUSTY STRING
     else {
@@ -50,9 +49,7 @@ const getFilteredData = ({
   });
 };
 
-export const filterEventsAction = (
-  props: getFilteredDataProps
-): AppThunkAction => {
+export const filterEventsAction = (props: Ifilters): AppThunkAction => {
   return async function thunk(dispatch): Promise<void> {
     try {
       const filteredData = await getFilteredData(props);
@@ -62,6 +59,7 @@ export const filterEventsAction = (
         dummyData.map((item: EventType) => item?.tags).flat()
       );
       dispatch(setEventsTags(tagsList));
+      dispatch(setFilters(props));
       console.log('tagsList', tagsList);
       dispatch(setFilteredEvents(sortedData));
     } catch (err) {
