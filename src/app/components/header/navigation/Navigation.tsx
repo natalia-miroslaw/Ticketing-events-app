@@ -19,7 +19,7 @@ export const NavByCategory: React.FC = () => {
   const onClick = useCallback(
     ({ category }): Promise<void> => {
       console.log('category', category)
-      return dispatch(filterEventsAction({ ...filters, category: category, tag: '' }));
+      return dispatch(filterEventsAction({ ...filters, category: category, tag: '', date: { dateFrom: null, dateTo: null } }));
     },
     [dispatch, filters]
   );

@@ -9,41 +9,41 @@ import {
 import { EventType } from '../../app/types/eventType';
 import uniq from 'lodash/uniq';
 
+// back-end simulation:
 const dummyData = [...DUMMY_DATA];
 
-// back-end simulation:
 const getFilteredData = ({
   category,
-  tag
+  tag,
+  date
 }: //date
 Ifilters): Promise<EventType[]> => {
   return new Promise((resolve) => {
-    let data: EventType[] = dummyData;
+    let data: EventType[] = [...DUMMY_DATA];
 
     // filtrowanie po category
     if (category) {
-      data = DUMMY_DATA.filter((event) => {
+      data = data.filter((event) => {
         return event.category === category;
       });
     }
 
     // filtrowanie po tagach
     if (tag) {
-      data = DUMMY_DATA.filter((event) => {
+      data = data.filter((event) => {
         return event.tags.some((eventTag) => eventTag === tag);
       });
     }
 
     // filtrowanie po dacie
-    // if (date) {
-    //   data = DUMMY_DATA.filter((event) => {
-    //     return event.date === date;
-    //   });
-    // }
-
-    // '' <- PUSTY STRING
-    else {
-      data = DUMMY_DATA;
+    if (date.dateFrom && date.dateTo) {
+      data = data.filter((event) => {
+        if (date.dateFrom && date.dateTo) {
+          return (
+            event.date >= date.dateFrom && event.date <= date.dateTo + 86400000
+          );
+        }
+      });
     }
     return setTimeout(() => resolve(data), Math.random() * 2000);
   });
@@ -57,7 +57,7 @@ export const filterEventsAction = (props: Ifilters): AppThunkAction => {
 
       const tagsList = uniq(
         dummyData.map((item: EventType) => item?.tags).flat()
-      );
+      ).sort();
       dispatch(setEventsTags(tagsList));
       dispatch(setFilters(props));
       console.log('tagsList', tagsList);

@@ -29,6 +29,9 @@ const OrganizerInfoPage = LoadingPage(
   lazy(() => import('../app/pages/OrganizerInfoPage'))
 );
 const EventPage = LoadingPage(lazy(() => import('../app/pages/EventPage')));
+const SearchResultsPage = LoadingPage(
+  lazy(() => import('../app/pages/SearchResultsPage'))
+);
 const LogInPage = LoadingPage(lazy(() => import('../app/pages/LogInPage')));
 const SignUpPage = LoadingPage(lazy(() => import('../app/pages/SignUpPage')));
 const LoggedInUserPage = LoadingPage(
@@ -53,6 +56,7 @@ export const Router: React.FC = () => {
         { path: Paths.root, element: <HomePage /> },
         { path: Paths.organizerInfo, element: <OrganizerInfoPage /> },
         { path: Paths.category, element: <CategoryPage /> },
+        { path: Paths.searchResultsPage, element: <SearchResultsPage /> },
         { path: Paths.eventPage, element: <EventPage /> },
         { path: Paths.loggedInUserPage, element: <LoggedInUserPage /> },
         {
