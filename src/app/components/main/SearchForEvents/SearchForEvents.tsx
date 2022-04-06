@@ -10,10 +10,10 @@ import { getEventsFiltersSelector } from '../../../../store/selectors';
 export const SearchForEvents: React.FC = () => {
   const dispatch = useDispatch();
   const filters = useSelector(getEventsFiltersSelector);
-  
-  const handleClick = () => {
+
+  const handleClick = (): void => {
     dispatch(filterEventsAction(filters));
-  }
+  };
   return (
     <SearchContainer>
       <div>

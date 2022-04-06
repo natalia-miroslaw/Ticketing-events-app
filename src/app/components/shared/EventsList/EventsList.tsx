@@ -1,7 +1,7 @@
 import React from 'react';
-import { EventsListContainer } from './EventsList.styles';
 import { EventCard } from './EventCard/EventCard';
 import { EventType } from '../../../types/eventType';
+import { Grid } from '@mui/material';
 
 interface EventsListProps {
   events: EventType[];
@@ -9,17 +9,19 @@ interface EventsListProps {
 
 export const EventsList: React.FC<EventsListProps> = ({ events }) => {
   return (
-    <EventsListContainer>
+    <Grid container spacing={2}>
       {events.slice(0, 3).map((event, index) => (
-        <EventCard
-          key={index}
-          eventTitle={event.title}
-          eventDate={event.date}
-          eventPlace={event.localization.place}
-          eventPhoto={event.photoUrl}
-          eventID={event.id}
-        />
+        <Grid item xs={12} md={6} lg={4}>
+          <EventCard
+            key={index}
+            eventTitle={event.title}
+            eventDate={event.date}
+            eventPlace={event.localization.place}
+            eventPhoto={event.photoUrl}
+            eventID={event.id}
+          />
+        </Grid>
       ))}
-    </EventsListContainer>
+    </Grid>
   );
 };

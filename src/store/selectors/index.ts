@@ -10,7 +10,8 @@ import { Ifilters } from '../slices/event-slice';
 //   ({ event }) => event
 // );
 
-export const getEventsSelector = (state: RootState): EventType[] => state.eventState.event;
+export const getEventsSelector = (state: RootState): EventType[] =>
+  state.eventState.event;
 
 export const getEventsTagsSelector = (state: RootState): string[] =>
   state.eventState.tags;

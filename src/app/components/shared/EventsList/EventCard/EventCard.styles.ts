@@ -1,9 +1,11 @@
-import styled from 'styled-components';
+import makeStyles from '@mui/styles/makeStyles';
 
-export const EventCardContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid black;
-  height: 100%;
-`;
+export const useEventCardStyles = makeStyles(
+  (theme) => ({
+    background: {
+      fontSize: '12px',
+      background: 'white'
+    }
+  }),
+  { name: 'eventCardStyles' }
+);

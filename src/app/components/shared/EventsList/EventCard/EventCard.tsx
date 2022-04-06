@@ -1,7 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { EventCardContainer } from './EventCard.styles';
+import { useEventCardStyles } from './EventCard.styles';
 import { fromUnixTime, millisecondsToSeconds } from 'date-fns';
+import {
+  Card,
+  CardHeader,
+  CardMedia,
+  CardContent,
+  Typography
+} from '@mui/material';
 
 interface EventCardProps {
   eventTitle: string;
@@ -18,22 +25,28 @@ export const EventCard: React.FC<EventCardProps> = ({
   eventPlace,
   eventID
 }) => {
+  const classes = useEventCardStyles();
   return (
-    <EventCardContainer>
+    <Card sx={{ maxWidth: 345 }} className={classes.background}>
       <Link to={`/event/${eventID}`}>
-        <img src={eventPhoto} alt="img" width="100px" />
-        <div>
-          <p>
+        <CardMedia
+          component="img"
+          height="194"
+          image={eventPhoto}
+          alt={eventTitle}
+        />
+        <CardContent>
+          <Typography variant="body2" color="text.secondary">
             {fromUnixTime(millisecondsToSeconds(eventDate)).toLocaleDateString(
               'gb-GB'
             )}
-            , {eventPlace}
-          </p>
-        </div>
-        <div>
-          <p>{eventTitle}</p>
-        </div>
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {eventPlace}
+          </Typography>
+          <CardHeader title={eventTitle} />
+        </CardContent>
       </Link>
-    </EventCardContainer>
+    </Card>
   );
 };

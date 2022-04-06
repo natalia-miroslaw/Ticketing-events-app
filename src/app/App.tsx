@@ -26,8 +26,9 @@ export const App: React.FC = () => {
         date: {
           dateFrom: null,
           dateTo: null
-      }})
-  );
+        }
+      })
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
