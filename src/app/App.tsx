@@ -5,12 +5,14 @@ import { Router } from '../routes/Router';
 import { BrowserRouter } from 'react-router-dom';
 import { filterEventsAction } from '../store/async-actions/filter-events.action';
 import { getEventsFiltersSelector } from '../store/selectors';
+import { ThemeProvider } from '@mui/material';
+import { theme } from './styles/theme/Overrides';
 
 const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  border: 1px solid red;
+  background-color: #f9f9f9;
 `;
 
 export const App: React.FC = () => {
@@ -34,9 +36,11 @@ export const App: React.FC = () => {
 
   return (
     <BrowserRouter>
-      <AppContainer>
-        <Router />
-      </AppContainer>
+      <ThemeProvider theme={theme()}>
+        <AppContainer>
+          <Router />
+        </AppContainer>
+      </ThemeProvider>
     </BrowserRouter>
   );
 };

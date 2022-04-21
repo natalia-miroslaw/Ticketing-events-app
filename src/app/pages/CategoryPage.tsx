@@ -7,7 +7,7 @@ const CategoryPage: React.FC = () => {
   const getEvents = useSelector(getEventsSelector);
   return (
     <div>
-      <h2>{`Concerts / Dancing Events / Online Events Page`}</h2>
+      <h2>category name</h2>
       <EventsList events={getEvents} />
     </div>
   );

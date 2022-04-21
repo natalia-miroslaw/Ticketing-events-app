@@ -1,28 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
 import { SearchForEvents } from './SearchForEvents/SearchForEvents';
 import { UpcomingEvents } from './UpcomingEvents/UpcomingEvents';
 import crowdImage from '../../../assets/images/crowd.jpg';
-
-const MainContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid black;
-
-  & img {
-    height: 300px;
-    border: 1px solid black;
-  }
-`;
+import { Grid } from '@mui/material';
 
 export const Main: React.FC = () => {
   return (
-    <MainContainer>
-      <SearchForEvents>Search</SearchForEvents>
-      <UpcomingEvents>Comingup</UpcomingEvents>
+    <Grid container direction={'column'} mx={2}>
+      <SearchForEvents />
+      <UpcomingEvents />
       <img src={crowdImage} alt="Crowd at the concert" />
-    </MainContainer>
+    </Grid>
   );
 };

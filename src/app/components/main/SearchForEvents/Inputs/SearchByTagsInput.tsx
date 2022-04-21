@@ -26,7 +26,7 @@ export const SearchByTagsInput: React.FC = () => {
   };
 
   return (
-    <Box sx={{ minWidth: 120 }}>
+    <Box sx={{ minWidth: 270 }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Tags</InputLabel>
         <Select

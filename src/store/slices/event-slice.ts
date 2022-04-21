@@ -51,7 +51,6 @@ const eventSlice = createSlice({
     setFilters(state: EventStateInterface, action: PayloadAction<Ifilters>) {
       state.filters = action.payload;
     }
-    // dateFilter() {}
   }
 });
 

@@ -19,9 +19,5 @@ export const NavContainer = styled.nav`
 
   & li {
     margin: 0 1rem;
-    width: 8.5rem;
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
   }
 `;

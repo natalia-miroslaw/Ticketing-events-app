@@ -6,6 +6,5 @@ export const UpcomingEventsContainer = styled.div`
   width: 100%;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
   padding: 0 10px;
 `;

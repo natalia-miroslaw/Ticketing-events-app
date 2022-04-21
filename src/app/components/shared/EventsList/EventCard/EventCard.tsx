@@ -27,7 +27,7 @@ export const EventCard: React.FC<EventCardProps> = ({
 }) => {
   const classes = useEventCardStyles();
   return (
-    <Card sx={{ maxWidth: 345 }} className={classes.background}>
+    <Card className={classes.background}>
       <Link to={`/event/${eventID}`}>
         <CardMedia
           component="img"

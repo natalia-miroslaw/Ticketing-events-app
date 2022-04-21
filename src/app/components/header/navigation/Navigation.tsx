@@ -1,10 +1,10 @@
 import React, { useCallback } from 'react';
 import { NavContainer } from './Navigation.styles';
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { filterEventsAction } from '../../../../store/async-actions/filter-events.action';
 import { AppThunkDispatch } from '../../../../store/reducers/rootReducer';
 import { getEventsFiltersSelector } from '../../../../store/selectors';
+import { Button } from '@mui/material';
 
 const categories = [
   { name: 'Concerts', status: false },
@@ -16,9 +16,8 @@ export const NavByCategory: React.FC = () => {
   const dispatch = useDispatch<AppThunkDispatch>();
   const filters = useSelector(getEventsFiltersSelector);
 
-  const onClick = useCallback(
+  const handleClick = useCallback(
     ({ category }): Promise<void> => {
-      console.log('category', category);
       return dispatch(
         filterEventsAction({
           ...filters,
@@ -37,11 +36,12 @@ export const NavByCategory: React.FC = () => {
         {categories.map((category, index) => {
           return (
             <li key={index}>
-              <Link
-                onClick={() => onClick({ category: category.name, tag: '' })}
-                to={`/category/${category.name}`}>
+              <Button
+                variant={'outlined'}
+                onClick={() => handleClick({ category: category.name })}
+                href={`/category/${category.name}`}>
                 {category.name}
-              </Link>
+              </Button>
             </li>
           );
         })}

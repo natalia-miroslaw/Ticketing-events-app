@@ -2,12 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const MapContainer = styled.div`
-  width: 50%;
+  width: 100%;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 5px;
-  border: 1px solid black;
 `;
 
 export const MyMap: React.FC = () => {

@@ -11,7 +11,7 @@ const HeaderContainer = styled.header`
   align-items: center;
   height: 100px;
   width: 100%;
-  border: 1px solid black;
+  border-bottom: 1px solid lightgrey;
 `;
 
 export const Header: React.FC = () => {

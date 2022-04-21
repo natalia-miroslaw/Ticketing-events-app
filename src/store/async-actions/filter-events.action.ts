@@ -9,15 +9,14 @@ import {
 import { EventType } from '../../app/types/eventType';
 import uniq from 'lodash/uniq';
 
-// back-end simulation:
 const dummyData = [...DUMMY_DATA];
 
+// back-end simulation:
 const getFilteredData = ({
   category,
   tag,
   date
-}: //date
-Ifilters): Promise<EventType[]> => {
+}: Ifilters): Promise<EventType[]> => {
   return new Promise((resolve) => {
     let data: EventType[] = [...DUMMY_DATA];
 
@@ -60,7 +59,6 @@ export const filterEventsAction = (props: Ifilters): AppThunkAction => {
       ).sort();
       dispatch(setEventsTags(tagsList));
       dispatch(setFilters(props));
-      console.log('tagsList', tagsList);
       dispatch(setFilteredEvents(sortedData));
     } catch (err) {
       console.log(err);

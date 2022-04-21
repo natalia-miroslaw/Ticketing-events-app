@@ -10,7 +10,6 @@ import { RootState } from '../slices/types';
 
 const rootReducer = combineReducers({
   eventState: eventSliceReducer
-  //next reducers
 });
 
 export type AppThunkDispatch<S = RootState, E = null> = ThunkDispatch<
