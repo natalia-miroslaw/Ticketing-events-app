@@ -46,9 +46,9 @@ export const SearchForEvents: React.FC = () => {
             </Button>
           </Grid>
         </Grid>
-        <Grid item sm={12} md={6}>
+        {/* <Grid item sm={12} md={6}>
           <MyMap />
-        </Grid>
+        </Grid> */}
       </Grid>
     </SearchContainer>
   );

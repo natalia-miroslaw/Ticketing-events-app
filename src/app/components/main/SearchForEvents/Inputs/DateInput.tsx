@@ -34,7 +34,10 @@ export const DateInput: React.FC = () => {
         startText="Date-From"
         endText="Date-To"
         value={date}
-        onChange={(newValue: any ) => handleChange(newValue)}
+        onChange={(newValue: any) => {
+          console.log('newValue', newValue)
+          handleChange(newValue)
+        }}
         onClose={() => setDateRange(date)}
         renderInput={(startProps: any, endProps: any) => (
           <React.Fragment>

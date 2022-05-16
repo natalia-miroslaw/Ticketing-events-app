@@ -1,10 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  MapContainer,
-  TileLayer,
-  useMap
-} from 'https://cdn.esm.sh/react-leaflet';
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 
 const MapDivContainer = styled.div`
   width: 100%;
@@ -21,7 +17,7 @@ export const MyMap: React.FC = () => {
         style={{ height: '100%', width: '100%' }}
         center={[51.505, -0.09]}
         zoom={13}
-        scrollWheelZoom={false}>
+        scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
