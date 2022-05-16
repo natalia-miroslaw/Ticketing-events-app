@@ -20,7 +20,7 @@ export const SearchForEvents: React.FC = () => {
       <Grid direction={'row'} spacing={2} container>
         <Grid
           padding={2}
-          spacing={3}
+          spacing={2}
           justifyContent={'center'}
           alignItems={'center'}
           container

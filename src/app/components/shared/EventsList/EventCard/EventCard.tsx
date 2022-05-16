@@ -36,7 +36,10 @@ export const EventCard: React.FC<EventCardProps> = ({
           alt={eventTitle}
         />
         <CardContent>
-          <Typography variant="body2" color="text.secondary">
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            className={classes.text}>
             {fromUnixTime(millisecondsToSeconds(eventDate)).toLocaleDateString(
               'gb-GB'
             )}
@@ -44,7 +47,7 @@ export const EventCard: React.FC<EventCardProps> = ({
           <Typography variant="body2" color="text.secondary">
             {eventPlace}
           </Typography>
-          <CardHeader title={eventTitle} />
+          <CardHeader title={eventTitle} className={classes.text} />
         </CardContent>
       </Link>
     </Card>

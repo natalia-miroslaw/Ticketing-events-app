@@ -3,6 +3,7 @@ import { filterEventsAction } from '../../../../../store/async-actions/filter-ev
 import { useDispatch, useSelector } from 'react-redux';
 import { getEventsFiltersSelector } from '../../../../../store/selectors';
 import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 export const ViewResultsButton: React.FC = () => {
   const dispatch = useDispatch();
@@ -13,13 +14,14 @@ export const ViewResultsButton: React.FC = () => {
   };
 
   return (
-    <Button
-      variant="contained"
-      href="/search-results"
-      onClick={() => handleClick()}
-      size="large"
-      sx={{ margin: '25px' }}>
-      View More Events
-    </Button>
+    <Link to={'/search-results'}>
+      <Button
+        variant="contained"
+        onClick={() => handleClick()}
+        size="large"
+        sx={{ margin: '15px 0px 35px' }}>
+        View More Events
+      </Button>
+    </Link>
   );
 };

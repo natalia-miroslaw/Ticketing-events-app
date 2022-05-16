@@ -1,7 +1,7 @@
 import { TypographyOptions } from '@mui/material/styles/createTypography';
 
 export const typography: TypographyOptions = {
-  fontFamily: 'LazareGrotesk-Regular',
+  fontFamily: 'Noto Sans JP',
   htmlFontSize: 16,
   allVariants: {
     fontWeight: 400,

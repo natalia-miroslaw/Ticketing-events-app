@@ -11,7 +11,7 @@ export const UpcomingEvents: React.FC = () => {
   return (
     <UpcomingEventsContainer>
       <h2>Check out upcoming events</h2>
-      <EventsList events={getEvents} />
+      <EventsList events={getEvents.slice(0, 3)} />
       <ViewResultsButton />
     </UpcomingEventsContainer>
   );

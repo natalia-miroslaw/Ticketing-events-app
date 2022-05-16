@@ -1,11 +1,19 @@
 import React from 'react';
-import { Grid } from '@mui/material';
+import styled from 'styled-components';
+import { EventType } from '../types/eventType';
 
-const EventPage: React.FC = () => {
+const EventPageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const EventPage: React.FC<EventType> = (event) => {
   return (
-    <Grid container justifyContent={'center'} alignItems={'center'}>
-      <h2>Event title</h2>
-    </Grid>
+    <EventPageContainer>
+      <h2>{`{getEvent.title}`}</h2>
+      <h3>hello</h3>
+    </EventPageContainer>
   );
 };
 

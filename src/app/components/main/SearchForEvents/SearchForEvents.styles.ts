@@ -5,4 +5,5 @@ export const SearchContainer = styled.div`
   flex-direction: row;
   height: 300px;
   width: 100%;
+  padding-left: 20px;
 `;
