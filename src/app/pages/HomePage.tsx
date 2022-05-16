@@ -1,21 +1,16 @@
 import React from 'react';
 import { SearchForEvents } from '../components/main/SearchForEvents/SearchForEvents';
 import { UpcomingEvents } from '../components/main/UpcomingEvents/UpcomingEvents';
-import styled from 'styled-components';
-
-const HomePageContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-`;
+import crowdImage from '../../assets/images/6.jpg';
+import { Grid } from '@mui/material';
 
 const HomePage: React.FC = () => {
   return (
-    <HomePageContainer>
+    <Grid container direction={'column'} mx={2}>
       <SearchForEvents />
       <UpcomingEvents />
-      <div>img</div>
-    </HomePageContainer>
+      <img src={crowdImage} alt="Crowd at the concert" width={'100%'} />
+    </Grid>
   );
 };
 

@@ -1,14 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 
-const MapContainer = styled.div`
+const MapDivContainer = styled.div`
   width: 100%;
-  height: 300px;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 export const MyMap: React.FC = () => {
-  return <MapContainer>Map</MapContainer>;
+  return (
+    <MapDivContainer>
+      <MapContainer
+        style={{ height: '100%', width: '100%' }}
+        center={[51.505, -0.09]}
+        zoom={13}
+        scrollWheelZoom={false}>
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Marker position={[51.505, -0.09]}>
+          <Popup>
+            A pretty CSS3 popup. <br /> Easily customisable.
+          </Popup>
+        </Marker>
+      </MapContainer>
+    </MapDivContainer>
+  );
 };

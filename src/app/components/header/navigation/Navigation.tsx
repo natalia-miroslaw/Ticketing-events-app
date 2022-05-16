@@ -5,6 +5,7 @@ import { filterEventsAction } from '../../../../store/async-actions/filter-event
 import { AppThunkDispatch } from '../../../../store/reducers/rootReducer';
 import { getEventsFiltersSelector } from '../../../../store/selectors';
 import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const categories = [
   { name: 'Concerts', status: false },
@@ -36,12 +37,13 @@ export const NavByCategory: React.FC = () => {
         {categories.map((category, index) => {
           return (
             <li key={index}>
-              <Button
-                variant={'outlined'}
-                onClick={() => handleClick({ category: category.name })}
-                href={`/category/${category.name}`}>
-                {category.name}
-              </Button>
+              <Link to={`/category/${category.name}`}>
+                <Button
+                  variant={'outlined'}
+                  onClick={() => handleClick({ category: category.name })}>
+                  {category.name}
+                </Button>
+              </Link>
             </li>
           );
         })}

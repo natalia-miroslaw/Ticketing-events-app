@@ -5,6 +5,9 @@ export const useEventCardStyles = makeStyles(
     background: {
       fontSize: '12px',
       background: 'white'
+    },
+    text: {
+      textDecoration: 'none'
     }
   }),
   { name: 'eventCardStyles' }
