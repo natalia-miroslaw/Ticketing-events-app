@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Box, TextField } from '@mui/material';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import { DateRange, DateRangePicker, LocalizationProvider } from '@mui/lab';
+import {
+  DateRange,
+  DateRangePicker
+} from '@mui/x-date-pickers-pro/DateRangePicker';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { useDispatch, useSelector } from 'react-redux';
 import { getEventsFiltersSelector } from '../../../../../store/selectors';
 import { setFilters } from '../../../../../store/slices/event-slice';
@@ -34,12 +38,9 @@ export const DateInput: React.FC = () => {
         startText="Date-From"
         endText="Date-To"
         value={date}
-        onChange={(newValue: any) => {
-          console.log('newValue', newValue)
-          handleChange(newValue)
-        }}
+        onChange={(newValue) => handleChange(newValue)}
         onClose={() => setDateRange(date)}
-        renderInput={(startProps: any, endProps: any) => (
+        renderInput={(startProps, endProps) => (
           <React.Fragment>
             <TextField {...startProps} />
             <Box sx={{ mx: 2 }}> to </Box>
