@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useEventCardStyles } from './EventCard.styles';
 import { fromUnixTime, millisecondsToSeconds } from 'date-fns';
 import {
@@ -9,6 +9,8 @@ import {
   CardContent,
   Typography
 } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { setSelectedEvent } from '../../../../../store/slices/event-slice';
 
 interface EventCardProps {
   eventTitle: string;
@@ -25,31 +27,36 @@ export const EventCard: React.FC<EventCardProps> = ({
   eventPlace,
   eventID
 }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const classes = useEventCardStyles();
+
+  const clickHandler = (): void => {
+    dispatch(setSelectedEvent(eventID));
+    navigate(`/event/${eventID}`);
+  };
   return (
-    <Card className={classes.background}>
-      <Link to={`/event/${eventID}`}>
-        <CardMedia
-          component="img"
-          height="194"
-          image={eventPhoto}
-          alt={eventTitle}
-        />
-        <CardContent>
-          <Typography
-            variant="body2"
-            color="text.secondary"
-            className={classes.text}>
-            {fromUnixTime(millisecondsToSeconds(eventDate)).toLocaleDateString(
-              'gb-GB'
-            )}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {eventPlace}
-          </Typography>
-          <CardHeader title={eventTitle} className={classes.text} />
-        </CardContent>
-      </Link>
+    <Card className={classes.background} onClick={() => clickHandler()}>
+      <CardMedia
+        component="img"
+        height="194"
+        image={eventPhoto}
+        alt={eventTitle}
+      />
+      <CardContent>
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          className={classes.text}>
+          {fromUnixTime(millisecondsToSeconds(eventDate)).toLocaleDateString(
+            'gb-GB'
+          )}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {eventPlace}
+        </Typography>
+        <CardHeader title={eventTitle} className={classes.text} />
+      </CardContent>
     </Card>
   );
 };

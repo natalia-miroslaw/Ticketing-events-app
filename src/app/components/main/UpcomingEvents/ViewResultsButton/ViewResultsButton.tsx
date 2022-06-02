@@ -3,25 +3,25 @@ import { filterEventsAction } from '../../../../../store/async-actions/filter-ev
 import { useDispatch, useSelector } from 'react-redux';
 import { getEventsFiltersSelector } from '../../../../../store/selectors';
 import { Button } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const ViewResultsButton: React.FC = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const filters = useSelector(getEventsFiltersSelector);
 
   const handleClick = (): void => {
+    navigate('/search-results');
     dispatch(filterEventsAction(filters));
   };
 
   return (
-    <Link to={'/search-results'}>
-      <Button
-        variant="contained"
-        onClick={() => handleClick()}
-        size="large"
-        sx={{ margin: '15px 0px 35px' }}>
-        View More Events
-      </Button>
-    </Link>
+    <Button
+      variant="contained"
+      onClick={() => handleClick()}
+      size="large"
+      sx={{ margin: '15px 0px 35px' }}>
+      View More Events
+    </Button>
   );
 };

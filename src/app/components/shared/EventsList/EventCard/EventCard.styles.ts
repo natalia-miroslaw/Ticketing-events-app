@@ -4,7 +4,8 @@ export const useEventCardStyles = makeStyles(
   (theme) => ({
     background: {
       fontSize: '12px',
-      background: 'white'
+      background: 'white',
+      cursor: 'pointer'
     },
     text: {
       textDecoration: 'none'

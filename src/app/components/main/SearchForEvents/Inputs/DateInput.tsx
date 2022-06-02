@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Box, TextField } from '@mui/material';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import { DateRange, DateRangePicker, LocalizationProvider } from '@mui/lab';
+import {
+  DateRange,
+  DateRangePicker
+} from '@mui/x-date-pickers-pro/DateRangePicker';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { useDispatch, useSelector } from 'react-redux';
 import { getEventsFiltersSelector } from '../../../../../store/selectors';
 import { setFilters } from '../../../../../store/slices/event-slice';

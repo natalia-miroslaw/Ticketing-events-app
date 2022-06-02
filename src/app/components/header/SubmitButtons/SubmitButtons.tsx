@@ -1,17 +1,17 @@
 import React from 'react';
-import { ButtonContainer } from './SubmitButtons.styles';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Paths } from '../../../../routes/paths';
+import { Button } from '@mui/material';
 
 export const SubmitButtons: React.FC = () => {
+  const navigate = useNavigate();
+  const SignUpClickHandler = (): void => navigate(Paths.signUpPage);
+  const LogInClickHandler = (): void => navigate(Paths.logInPage);
+
   return (
     <div>
-      <ButtonContainer>
-        <Link to={Paths.signUpPage}>Sign Up</Link>
-      </ButtonContainer>
-      <ButtonContainer>
-        <Link to={Paths.logInPage}>Log In</Link>
-      </ButtonContainer>
+      <Button onClick={SignUpClickHandler}>Sign Up</Button>
+      <Button onClick={LogInClickHandler}>Log In</Button>
     </div>
   );
 };
