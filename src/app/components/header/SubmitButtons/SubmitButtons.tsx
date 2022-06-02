@@ -5,8 +5,8 @@ import { Button } from '@mui/material';
 
 export const SubmitButtons: React.FC = () => {
   const navigate = useNavigate();
-  const SignUpClickHandler = () => navigate(Paths.signUpPage);
-  const LogInClickHandler = () => navigate(Paths.logInPage);
+  const SignUpClickHandler = (): void => navigate(Paths.signUpPage);
+  const LogInClickHandler = (): void => navigate(Paths.logInPage);
 
   return (
     <div>
