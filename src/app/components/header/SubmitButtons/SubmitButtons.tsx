@@ -10,9 +10,7 @@ export const SubmitButtons: React.FC = () => {
 
   return (
     <div>
-      <Button variant={'outlined'} onClick={SignUpClickHandler}>
-        Sign Up
-      </Button>
+      <Button onClick={SignUpClickHandler}>Sign Up</Button>
       <Button onClick={LogInClickHandler}>Log In</Button>
     </div>
   );
