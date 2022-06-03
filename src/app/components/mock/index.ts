@@ -36,7 +36,11 @@ export const DUMMY_DATA: EventType[] = [
     ],
     localization: {
       place: 'Toruń',
-      address: 'Dom Kultury, ul. Szeroka 10'
+      address: 'Dom Kultury, ul. Szeroka 10',
+      position: {
+        lon: 18.608817756573725,
+        lat: 53.01155932408432
+      }
     },
     photoUrl:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.wcjVQ_DdUiiAymfmPeRX6wHaHa%26pid%3DApi&f=1'
@@ -59,7 +63,11 @@ export const DUMMY_DATA: EventType[] = [
     ],
     localization: {
       place: 'Kołobrzeg',
-      address: 'Podczele Airport'
+      address: 'Podczele Airport',
+      position: {
+        lon: 15.672181601120807,
+        lat: 54.19605484676229
+      }
     },
     photoUrl:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Bv4sAU3NeEp3jJ7QbDQHxgHaE8%26pid%3DApi&f=1'
@@ -80,7 +88,7 @@ export const DUMMY_DATA: EventType[] = [
   },
   {
     id: 5,
-    title: 'Hip-Hop Workshops in Vienna',
+    title: 'Hip-Hop Workshops in Poznań',
     date: 1655038800000, //12-06-2022 13:00
     organizer: 'Natalia Mirosław',
     description: 'Buy ticket for Hip-Hop workshops with Mario & Luigi',
@@ -88,7 +96,7 @@ export const DUMMY_DATA: EventType[] = [
     category: 'Dancing Workshops',
     tags: [
       'Classes',
-      'Vienna',
+      'Poznań',
       'Mario',
       'Luigi',
       'Hip-hop',
@@ -97,8 +105,12 @@ export const DUMMY_DATA: EventType[] = [
       'Intermediate level'
     ],
     localization: {
-      place: 'Vienna',
-      address: 'Vienna Dance School, Sunny Street 12'
+      place: 'Poznań',
+      address: 'RITMO Dance Studio, Maltańska 1',
+      position: {
+        lon: 16.959082878308052,
+        lat: 52.40398415259607
+      }
     },
     photoUrl:
       'https://www.freestyledancepa.com/wp-content/uploads/2012/08/IMG_0216.jpg'
@@ -121,7 +133,11 @@ export const DUMMY_DATA: EventType[] = [
     ],
     localization: {
       place: 'Wrocław',
-      address: 'Tarczyński Arena Wrocław, Al. Śląska 1'
+      address: 'Tarczyński Arena Wrocław, Al. Śląska 1',
+      position: {
+        lon: 16.9437849134762,
+        lat: 51.14129482462953
+      }
     },
     photoUrl:
       'https://i1.wp.com/www.worldareggae.com/wp-content/uploads/2019/06/Damian-Marley-Woodstock-2019-3228-2.jpg?fit=1080%2C720&ssl=1'
@@ -137,7 +153,11 @@ export const DUMMY_DATA: EventType[] = [
     tags: ['Alicia Keys', 'Concert', 'R&B', 'Kraków'],
     localization: {
       place: 'Kraków',
-      address: 'TAURON Arena Kraków, ul. Stanisława Lema 7'
+      address: 'TAURON Arena Kraków, ul. Stanisława Lema 7',
+      position: {
+        lon: 19.99141355541286,
+        lat: 50.067797319088925
+      }
     },
     photoUrl: ''
   },
@@ -159,7 +179,11 @@ export const DUMMY_DATA: EventType[] = [
     ],
     localization: {
       place: 'Warszawa',
-      address: 'PGE Narodowy Warszawa, ul. Poniatowskiego 1'
+      address: 'PGE Narodowy Warszawa, ul. Poniatowskiego 1',
+      position: {
+        lon: 21.045758711334187,
+        lat: 52.23962707824463
+      }
     },
     photoUrl: ''
   },
@@ -174,7 +198,11 @@ export const DUMMY_DATA: EventType[] = [
     tags: ['Ed Scheeran', 'Concert', 'Pop', 'Rock', 'Folk', 'Warszawa'],
     localization: {
       place: 'Warszawa',
-      address: 'PGE Narodowy Warszawa, ul. Poniatowskiego 1'
+      address: 'PGE Narodowy Warszawa, ul. Poniatowskiego 1',
+      position: {
+        lon: 21.045758711334187,
+        lat: 52.23962707824463
+      }
     },
     photoUrl: ''
   },
@@ -196,7 +224,11 @@ export const DUMMY_DATA: EventType[] = [
     ],
     localization: {
       place: 'Warszawa',
-      address: 'Klub Stodoła, ul. Batorego 10'
+      address: 'Klub Stodoła, ul. Batorego 10',
+      position: {
+        lon: 21.01028037085281,
+        lat: 52.211712886806644
+      }
     },
     photoUrl: ''
   },
@@ -220,7 +252,11 @@ export const DUMMY_DATA: EventType[] = [
     ],
     localization: {
       place: 'Poznań',
-      address: 'Latino Dance School, ul. Toruńska 140'
+      address: 'Salsa Siempre Studio Dance, ul. Św. Marcina 24',
+      position: {
+        lon: 16.927796976407354,
+        lat: 52.40944775405399
+      }
     },
     photoUrl: ''
   },
@@ -229,44 +265,26 @@ export const DUMMY_DATA: EventType[] = [
     title: 'High Heels Workshops',
     date: 1662721200000, //09-09-2022 11:00
     organizer: 'Natalia Mirosław',
-    description: 'High Heels workshops in Olsztyn, check the ',
+    description: 'High Heels workshops in Gdańsk with Anna Studackeva',
     price: 45.0,
     category: 'Dancing Workshops',
     tags: [
       'Classes',
-      'Poznań',
-      'Silvia',
-      'Salsa',
-      'Latino',
+      'Gdańsk',
+      'Anna Studackeva',
+      'High heels',
       'Workshops',
       'Beginner level',
       'Intermediate level'
     ],
     localization: {
-      place: 'Poznań',
-      address: 'Latino Dance School, ul. Toruńska 140'
+      place: 'Gdańsk',
+      address: 'Studio Tańca Siemanko, ul. Kilińskiego 4 Galeria Metropolia',
+      position: {
+        lon: 18.605255028058366,
+        lat: 54.38303209186031
+      }
     },
     photoUrl: ''
   }
 ];
-
-// export const categories = [
-//   {
-//     name: 'Concerts',
-//     subcategories: [
-//       'Rock',
-//       'Reggae',
-//       'Pop',
-//       'Electronic',
-//       'Dancehall',
-//       'Hip-hop',
-//       'Folk',
-//       'Latin'
-//     ]
-//   },
-//   {
-//     name: 'Dancing Workshops',
-//     subcategories: ['Dancehall', 'Hip-hop', 'Afro', 'Salsa', 'Twerk']
-//   },
-//   { name: 'Online Events' }
-// ];

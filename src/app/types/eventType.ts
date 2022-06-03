@@ -10,8 +10,10 @@ export interface EventType {
   localization: {
     place: string | 'online';
     address?: string;
-    lat?: number;
-    long?: number;
+    position?: {
+      lat?: number;
+      lon?: number;
+    }
   };
   photoUrl?: string;
 }
