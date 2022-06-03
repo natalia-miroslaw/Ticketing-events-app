@@ -11,7 +11,7 @@ export interface Ifilters {
 }
 
 export interface EventStateInterface {
-  event: EventType[];
+  events: EventType[];
   tags: string[];
   showEvent: boolean;
   date: number;
@@ -20,7 +20,7 @@ export interface EventStateInterface {
 }
 
 const initialEventState: EventStateInterface = {
-  event: [],
+  events: [],
   tags: [],
   showEvent: true,
   date: new Date().getTime(),
@@ -36,7 +36,7 @@ const initialEventState: EventStateInterface = {
 };
 
 const eventSlice = createSlice({
-  name: 'eventFilter',
+  name: 'eventsFilter',
   initialState: initialEventState,
   reducers: {
     setFilteredEvents(
@@ -44,7 +44,7 @@ const eventSlice = createSlice({
       action: PayloadAction<EventType[] | undefined>
     ): void {
       if (action.payload) {
-        state.event = action.payload;
+        state.events = action.payload;
       }
     },
     setEventsTags(state: EventStateInterface, action: PayloadAction<string[]>) {
@@ -58,7 +58,7 @@ const eventSlice = createSlice({
       action: PayloadAction<EventType['id']>
     ) {
       state.selectedEvent =
-        [...state.event].find((event) => event.id === action.payload) || null;
+        [...state.events].find((event) => event.id === action.payload) || null;
     }
   }
 });
