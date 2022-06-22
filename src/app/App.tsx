@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Router } from '../routes/Router';
 import { BrowserRouter } from 'react-router-dom';
 import { filterEventsAction } from '../store/async-actions/filter-events.action';
-import { getEventsFiltersSelector } from '../store/selectors';
+import { eventsSelectors } from '../store/selectors';
 import { ThemeProvider } from '@mui/material';
 import { theme } from './styles/theme/Overrides';
 
@@ -12,12 +12,12 @@ const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: #f9f9f9;
+  background-color: white;
 `;
 
 export const App: React.FC = () => {
   const dispatch = useDispatch();
-  const filters = useSelector(getEventsFiltersSelector);
+  const filters = useSelector(eventsSelectors.getEventsByFilters);
 
   useEffect(() => {
     dispatch(

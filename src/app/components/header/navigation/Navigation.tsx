@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
-import { NavContainer } from './Navigation.styles';
+import { NavContainer, UlContainer, LiContainer } from './Navigation.styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { filterEventsAction } from '../../../../store/async-actions/filter-events.action';
 import { AppThunkDispatch } from '../../../../store/reducers/rootReducer';
-import { getEventsFiltersSelector } from '../../../../store/selectors';
+import { eventsSelectors } from '../../../../store/selectors';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ const categories = [
 
 export const NavByCategory: React.FC = () => {
   const dispatch = useDispatch<AppThunkDispatch>();
-  const filters = useSelector(getEventsFiltersSelector);
+  const filters = useSelector(eventsSelectors.getEventsByFilters);
   const navigate = useNavigate();
 
   const handleClick = useCallback(
@@ -36,19 +36,19 @@ export const NavByCategory: React.FC = () => {
 
   return (
     <NavContainer>
-      <ul>
+      <UlContainer>
         {categories.map((category, index) => {
           return (
-            <li key={index}>
+            <LiContainer key={index}>
               <Button
                 variant={'outlined'}
                 onClick={() => handleClick({ category: category.name })}>
                 {category.name}
               </Button>
-            </li>
+            </LiContainer>
           );
         })}
-      </ul>
+      </UlContainer>
     </NavContainer>
   );
 };

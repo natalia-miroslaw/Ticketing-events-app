@@ -1,18 +1,17 @@
 import React from 'react';
-import styled from 'styled-components';
+import { styled } from '@mui/material';
 import { NavByCategory } from './navigation/Navigation';
 import { SubmitButtons } from './SubmitButtons/SubmitButtons';
 import { Logo } from './logo/Logo';
 
-const HeaderContainer = styled.header`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  height: 100px;
-  width: 100%;
-  border-bottom: 1px solid lightgrey;
-`;
+const HeaderContainer = styled('header')({
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-around',
+  alignItems: 'center',
+  width: '100%',
+  borderBottom: '1px solid lightgrey'
+});
 
 export const Header: React.FC = () => {
   return (

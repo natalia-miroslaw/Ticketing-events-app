@@ -1,19 +1,38 @@
 import { RootState } from '../slices/types';
-import { EventType } from '../../app/types/eventType';
-import { Ifilters } from '../slices/event-slice';
+import { createSelector } from '@reduxjs/toolkit';
+import { EventStateInterface } from '../slices/event-slice';
 
-export const getEventsSelector = (state: RootState): EventType[] =>
-  state.eventState.event;
+const getEventState = (state: RootState): EventStateInterface =>
+  state.eventState;
 
-export const getEventsTagsSelector = (state: RootState): string[] =>
-  state.eventState.tags;
-export const getEventsDateSelector = (state: RootState): number =>
-  state.eventState.date;
-export const getEventsFiltersSelector = (state: RootState): Ifilters =>
-  state.eventState.filters;
+const getAllEvents = createSelector(
+  [getEventState],
+  (eventsState) => eventsState.events
+);
 
-export const get3EventsSelector = (state: RootState): EventType[] =>
-  state.eventState.event.slice(0, 3);
+const get4Events = createSelector([getEventState], (eventsState) =>
+  eventsState.events.slice(0, 4)
+);
 
-export const getSelectedEventSelector = (state: RootState): EventType | null =>
-  state.eventState.selectedEvent;
+const getEventsByTag = createSelector(
+  [getEventState],
+  (eventsState) => eventsState.tags
+);
+
+const getEventsByFilters = createSelector(
+  [getEventState],
+  (eventsState) => eventsState.filters
+);
+
+const getSelectedEvent = (eventId: string | undefined) =>
+  createSelector([getEventState], (eventsState) =>
+    eventsState.events.find((event) => event.id === Number(eventId))
+  );
+
+export const eventsSelectors = {
+  getAllEvents,
+  get4Events,
+  getEventsByTag,
+  getEventsByFilters,
+  getSelectedEvent
+};

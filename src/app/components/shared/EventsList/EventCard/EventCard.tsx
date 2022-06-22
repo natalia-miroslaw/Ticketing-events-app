@@ -12,7 +12,7 @@ import {
 import { useDispatch } from 'react-redux';
 import { setSelectedEvent } from '../../../../../store/slices/event-slice';
 
-interface EventCardProps {
+export interface EventCardProps {
   eventTitle: string;
   eventDate: number;
   eventPlace: string;

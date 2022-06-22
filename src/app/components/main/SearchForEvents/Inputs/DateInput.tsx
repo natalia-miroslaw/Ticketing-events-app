@@ -7,14 +7,14 @@ import {
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { useDispatch, useSelector } from 'react-redux';
-import { getEventsFiltersSelector } from '../../../../../store/selectors';
+import { eventsSelectors } from '../../../../../store/selectors';
 import { setFilters } from '../../../../../store/slices/event-slice';
 
 export const DateInput: React.FC = () => {
   const dispatch = useDispatch();
   const [date, setDate] = useState<DateRange<Date>>([null, null]);
 
-  const filters = useSelector(getEventsFiltersSelector);
+  const filters = useSelector(eventsSelectors.getEventsByFilters);
 
   const handleChange = (newDate: DateRange<Date>): void => {
     setDate(newDate);

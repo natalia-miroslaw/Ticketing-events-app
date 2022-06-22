@@ -3,12 +3,22 @@ import { SearchForEvents } from '../components/main/SearchForEvents/SearchForEve
 import { UpcomingEvents } from '../components/main/UpcomingEvents/UpcomingEvents';
 import crowdImage from '../../assets/images/6.jpg';
 import { CardMedia, Grid } from '@mui/material';
+import { MyMap } from '../components/main/Map/Map';
 
 const HomePage: React.FC = () => {
   return (
     <Grid container direction={'column'} mx={2}>
-      <SearchForEvents />
-      <UpcomingEvents />
+      <Grid item sm={12}>
+        <SearchForEvents />
+      </Grid>
+      <Grid container item direction="row" sm={12}>
+        <Grid item sm={12} md={7}>
+          <UpcomingEvents />
+        </Grid>
+        <Grid item sm={12} md={5}>
+          <MyMap />
+        </Grid>
+      </Grid>
       <CardMedia
         component="img"
         image={crowdImage}

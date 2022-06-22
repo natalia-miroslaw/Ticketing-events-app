@@ -1,23 +1,23 @@
-import styled from 'styled-components';
+import { styled } from '@mui/material';
 
-export const NavContainer = styled.nav`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 10px;
-  height: 100%;
+export const NavContainer = styled('nav')({
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+  alignItems: 'center',
+  margin: '10px',
+  height: '100%'
+});
 
-  & ul {
-    height: 100%;
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
+export const UlContainer = styled('ul')({
+  height: '100%',
+  listStyle: 'none',
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'center'
+});
 
-  & li {
-    margin: 0 1rem;
-  }
-`;
+export const LiContainer = styled('li')({
+  margin: '0 1rem'
+});
