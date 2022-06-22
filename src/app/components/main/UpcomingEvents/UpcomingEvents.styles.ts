@@ -1,10 +1,9 @@
-import styled from 'styled-components';
+import { styled } from '@mui/material';
 
-export const UpcomingEventsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  padding: 0 10px;
-`;
+export const UpcomingEventsContainer = styled('div')({
+  display: 'flex',
+  flexDirection: 'column',
+  width: '100%',
+  justifyContent: 'center',
+  alignItems: 'center'
+});

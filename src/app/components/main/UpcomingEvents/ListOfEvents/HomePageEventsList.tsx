@@ -1,18 +1,14 @@
 import React from 'react';
-import { EventCard } from './EventCard/EventCard';
-import { EventType } from '../../../types/eventType';
 import { Grid } from '@mui/material';
+import { HorizontalEventCard } from './HorizontalEventCard/HorizontalEventCard';
+import { EventsListProps } from '../../../shared/EventsList/EventsList';
 
-export interface EventsListProps {
-  events: EventType[];
-}
-
-export const EventsList: React.FC<EventsListProps> = ({ events }) => {
+export const HPEventsList: React.FC<EventsListProps> = ({ events }) => {
   return (
-    <Grid container spacing={3} padding={'20px 40px'}>
+    <Grid flexDirection="column" container spacing={2} padding={'10px 20px'}>
       {events.map((event, index) => (
-        <Grid item xs={12} md={6} lg={4} key={index}>
-          <EventCard
+        <Grid item xs={12} key={index}>
+          <HorizontalEventCard
             key={index}
             eventTitle={event.title}
             eventDate={event.date}

@@ -159,7 +159,8 @@ export const DUMMY_DATA: EventType[] = [
         lat: 50.067797319088925
       }
     },
-    photoUrl: ''
+    photoUrl:
+      'https://www.swashvillage.org/storage/img/images_1/alicia-keys-biography.jpg'
   },
   {
     id: 8,
@@ -185,7 +186,8 @@ export const DUMMY_DATA: EventType[] = [
         lat: 52.23962707824463
       }
     },
-    photoUrl: ''
+    photoUrl:
+      'https://s3-eu-west-1.amazonaws.com/static.melkweg.nl/uploads/images/scaled/event_header/28519'
   },
   {
     id: 9,
@@ -204,7 +206,8 @@ export const DUMMY_DATA: EventType[] = [
         lat: 52.23962707824463
       }
     },
-    photoUrl: ''
+    photoUrl:
+      'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2022%2F04%2F06%2FGettyImages-1358334164.jpg'
   },
   {
     id: 10,
@@ -230,20 +233,21 @@ export const DUMMY_DATA: EventType[] = [
         lat: 52.211712886806644
       }
     },
-    photoUrl: ''
+    photoUrl:
+      'https://www.tekstowo.pl/zdjecie_wykonawcy,lost_frequencies,bG9zdF9mcmVxdWVuY2llc181X2E5NGU2NzQ5XzcwNjU4NQ.._1200_900_.jpg'
   },
   {
     id: 11,
     title: 'Salsa Workshops in Poznań',
     date: 1668009600000, //09-11-2022 16:00
     organizer: 'Natalia Mirosław',
-    description: 'Salsa workshops for ladies with Silvia',
+    description: 'Salsa workshops for ladies with Silvia and Paul',
     price: 40.0,
     category: 'Dancing Workshops',
     tags: [
       'Classes',
       'Poznań',
-      'Silvia',
+      'Silvia and Paul',
       'Salsa',
       'Latino',
       'Workshops',
@@ -258,7 +262,8 @@ export const DUMMY_DATA: EventType[] = [
         lat: 52.40944775405399
       }
     },
-    photoUrl: ''
+    photoUrl:
+      'https://images.pexels.com/photos/2188012/pexels-photo-2188012.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
   },
   {
     id: 12,
@@ -285,6 +290,7 @@ export const DUMMY_DATA: EventType[] = [
         lat: 54.38303209186031
       }
     },
-    photoUrl: ''
+    photoUrl:
+      'https://images.pexels.com/photos/8098276/pexels-photo-8098276.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
   }
 ];

@@ -1,17 +1,16 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { UpcomingEventsContainer } from './UpcomingEvents.styles';
-import { EventsList } from '../../shared/EventsList/EventsList';
-import { get3EventsSelector } from '../../../../store/selectors';
+import { eventsSelectors } from '../../../../store/selectors';
 import { ViewResultsButton } from './ViewResultsButton/ViewResultsButton';
+import { HPEventsList } from './ListOfEvents/HomePageEventsList';
 
 export const UpcomingEvents: React.FC = () => {
-  const getEvents = useSelector(get3EventsSelector);
+  const getEvents = useSelector(eventsSelectors.get4Events);
 
   return (
     <UpcomingEventsContainer>
-      <h2>Check out upcoming events</h2>
-      <EventsList events={getEvents.slice(0, 3)} />
+      <HPEventsList events={getEvents} />
       <ViewResultsButton />
     </UpcomingEventsContainer>
   );

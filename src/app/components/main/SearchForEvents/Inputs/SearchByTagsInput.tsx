@@ -8,16 +8,13 @@ import {
   Select,
   SelectChangeEvent
 } from '@mui/material';
-import {
-  getEventsFiltersSelector,
-  getEventsTagsSelector
-} from '../../../../../store/selectors';
+import { eventsSelectors } from '../../../../../store/selectors';
 import { setFilters } from '../../../../../store/slices/event-slice';
 
 export const SearchByTagsInput: React.FC = () => {
   const [tags, setTags] = React.useState('');
-  const eventsTags = useSelector(getEventsTagsSelector);
-  const filters = useSelector(getEventsFiltersSelector);
+  const eventsTags = useSelector(eventsSelectors.getEventsByTag);
+  const filters = useSelector(eventsSelectors.getEventsByFilters);
   const dispatch = useDispatch();
 
   const handleChange = (event: SelectChangeEvent): void => {
@@ -26,7 +23,7 @@ export const SearchByTagsInput: React.FC = () => {
   };
 
   return (
-    <Box sx={{ minWidth: 270 }}>
+    <Box sx={{ minWidth: 175 }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Tags</InputLabel>
         <Select
